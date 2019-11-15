@@ -1,6 +1,12 @@
-//package com.skillstom.data;
-//
-//public class TimesheetDAO {
+package com.skillstom.data;
+
+/**
+ * 
+ * @author Marc Marti
+ *
+ */
+
+public class TimesheetDAO {
 //	public User findByUsername(String username) {
 //		
 //	}
@@ -14,4 +20,4 @@
 //	public Timesheet save(Timesheet t) {}
 //	
 //	public Timesheet update(Timesheet t) {}
-//}
+}
