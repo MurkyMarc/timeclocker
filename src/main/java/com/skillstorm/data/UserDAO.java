@@ -16,22 +16,7 @@ import com.skillstorm.beans.User;
 
 
 public class UserDAO {
-//	public User findByUsername(String username) {
-//		
-//	}
-//	
-//	public List<Timesheet> findTimesheetsByUser(int id) {
-//		
-//	}
-//	
-//	public Timesheet findTimesheetById(int id) {}
-//	
-//	public Timesheet save(Timesheet t) {}
-//	
-//	public Timesheet update(Timesheet t) {}
-	
-	
-	
+
 	public Connection getConnection() throws SQLException {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
