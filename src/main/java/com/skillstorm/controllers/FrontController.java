@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class FrontController extends HttpServlet {
 
+	private static final long serialVersionUID = 4378091473458277051L;
 	private UserController userController = new UserController();
 	private TimesheetController timesheetController = new TimesheetController();
 
@@ -21,18 +22,6 @@ public class FrontController extends HttpServlet {
 				userController.getUser(req, resp);
 				return;
 			}
-			/*if (req.getMethod().equals("GET")) {
-				userController.getUser(req, resp);
-				return;
-			}
-			if (req.getMethod().equals("PUT")) {
-				userController.putUser(req, resp);
-				return;
-			}
-			if (req.getMethod().equals("DELETE")) {
-				userController.deleteUser(req, resp);
-				return;
-			}*/
 		case "/timeclocker/api/timesheet":
 			if (req.getMethod().equals("GET")) {
 				timesheetController.getTimesheet(req, resp);
@@ -51,13 +40,21 @@ public class FrontController extends HttpServlet {
 				timesheetController.deleteTimesheet(req, resp);
 				return;
 			}
+		case "/timeclocker/api/home":
+			req.getRequestDispatcher("/index.html").forward(req, resp);
+			return;
 		case "/timeclocker/api/route-1":
 			req.getRequestDispatcher("/one.html").forward(req, resp);
 			return;
-		case "/timeclocker/api/route-2":
+		case "/timeclocker/api/timesheets":
 			req.getRequestDispatcher("/timesheets.html").forward(req, resp);
 			return;
-
+		case "/timeclocker/api/try-again":
+			req.getRequestDispatcher("/try-again.html").forward(req, resp);
+			return;
+		case "/timeclocker/api/missing-something":
+			req.getRequestDispatcher("/missing-something.html").forward(req, resp);
+			return;
 		default:
 			break;
 		}
@@ -87,24 +84,4 @@ public class FrontController extends HttpServlet {
 	public void init() throws ServletException {
 		System.out.println("Front Controller Initialized!");
 	}
-
 }
-
-//public class FrontController extends HttpServlet {
-//	@Override
-//	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//		System.out.println("Dispatcher received url: " + req.getRequestURL());
-//		
-//		switch(req.getRequestURI()) {
-//		case "/timeclocker/api/route-1":
-//			req.getRequestDispatcher("/one.html").forward(req,  resp);
-//			break;
-//		case "/timeclocker/api/route-2" :
-//			req.getRequestDispatcher("/timesheets.html").forward(req,  resp);
-//			break;
-//		default:
-//			break;
-//		}
-//		
-//	}
-//}

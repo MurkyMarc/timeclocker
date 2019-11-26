@@ -18,9 +18,7 @@ public class User {
 	private String title;
 	private int roleId;
 
-	public User() {
-		
-	}
+	public User() {}
 	
 	public User(int userId, String f_name, String l_name, String title, int roleId) {
 		super();

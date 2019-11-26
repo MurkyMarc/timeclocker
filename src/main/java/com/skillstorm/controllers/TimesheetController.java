@@ -25,7 +25,7 @@ public class TimesheetController {
 			// get all timesheets for users with the role of employee. 
 			// can only be called by users with the manager role. manager role code is 2
 			resp.getWriter().println(new ObjectMapper()
-					.writeValueAsString(timesheetService.findAllEmployees()));
+					.writeValueAsString(timesheetService.findAllEmployeeTimesheets()));
 		}
 	}
 
@@ -34,7 +34,7 @@ public class TimesheetController {
 		resp.setContentType("application/json");
 
 		resp.getWriter().println(new ObjectMapper().writeValueAsString(
-				timesheetService.save(new ObjectMapper().readValue(req.getInputStream(), Timesheet.class))));
+				timesheetService.saveTimesheet(new ObjectMapper().readValue(req.getInputStream(), Timesheet.class))));
 
 		resp.setStatus(201);
 	}
@@ -43,7 +43,7 @@ public class TimesheetController {
 	public void putTimesheet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setContentType("application/json");
 
-		timesheetService.update(new ObjectMapper().readValue(req.getInputStream(), Timesheet.class));
+		timesheetService.updateTimesheet(new ObjectMapper().readValue(req.getInputStream(), Timesheet.class));
 
 		resp.setStatus(204);
 
@@ -53,7 +53,7 @@ public class TimesheetController {
 	public void deleteTimesheet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.setContentType("application/json");
 
-		timesheetService.delete(Integer.parseInt(req.getParameter("id")));
+		timesheetService.deleteTimesheet(Integer.parseInt(req.getParameter("id")));
 
 		resp.setStatus(204);
 	}

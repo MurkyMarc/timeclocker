@@ -15,25 +15,25 @@
 				alt="" /></a>
 		</div>
 		<div class="buttons">
-			<div class="button">
-				<a href="/">Log Out</a>
-			</div>
-			<div class="button">
-				<a href="/">Log in</a>
-			</div>
-			<div class="button">
-				<a href="/timeclocker/api/timesheets">My Timesheets</a>
-			</div>
-			<div class="button">
-				<a href="/timeclocker/api/route-2">Submit</a>
-			</div>
+			
 		</div>
 	</div>
 
 
 	<div class="data-box">
-		one.html
+		<div class="login-box">
+			<h3 class="login-title">Please log in:</h3>
+			<form method="post" action="/timeclocker/api/login">
+				<label>Username: </label><input type="text" name="username" /> <br />
+				<label>Password: </label><input type="password" name="password" />
+				<br /> <input type="submit" value="Login" />
+			</form>
+		</div>
+
+		<div>You seem to be missing something... Please enter a username and a password.</div>
+		
 	</div>
+
 
 </body>
 
