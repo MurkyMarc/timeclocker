@@ -198,6 +198,8 @@ function appendTimesheet(timesheet, i) {
         });
         tr.appendChild(submitButton);
 
+        // UNFINISHED!!!! - CONSECUTIVE DELETES MAY DELETE THE WRONG ROW
+        // row counter is being changed after a deletion. need to revise
         let deleteButton = document.createElement('button');
         deleteButton.innerHTML = "Delete";
         deleteButton.setAttribute("timesheetId", timesheet.timesheetId);
