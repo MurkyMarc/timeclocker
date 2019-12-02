@@ -22,6 +22,11 @@ public class FrontController extends HttpServlet {
 				userController.getUser(req, resp);
 				return;
 			}
+		case "/timeclocker/api/logout":
+			if (req.getMethod().equals("GET")) {
+				userController.logout(req, resp);
+				return;
+			}
 		case "/timeclocker/api/timesheet":
 			if (req.getMethod().equals("GET")) {
 				timesheetController.getTimesheet(req, resp);
@@ -35,7 +40,6 @@ public class FrontController extends HttpServlet {
 				timesheetController.putTimesheet(req, resp);
 				return;
 			}
-			
 			if (req.getMethod().equals("DELETE")) {
 				timesheetController.deleteTimesheet(req, resp);
 				return;
@@ -56,6 +60,7 @@ public class FrontController extends HttpServlet {
 			req.getRequestDispatcher("/missing-something.html").forward(req, resp);
 			return;
 		default:
+			resp.sendRedirect("/index.html");
 			break;
 		}
 	}

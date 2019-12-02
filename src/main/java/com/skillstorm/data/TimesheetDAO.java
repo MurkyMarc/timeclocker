@@ -206,25 +206,16 @@ public class TimesheetDAO {
 	}
 
 	public void delete(int id) throws SQLException {
-
-		System.out.println(id);
-
 		Connection conn = getConnection();
 
-		System.out.println("one");
 		String sql = "DELETE FROM TIMESHEET WHERE TIMESHEETID = ?";
 		try {
 			conn.setAutoCommit(false);
 			PreparedStatement stmt = conn.prepareStatement(sql);
-
-			System.out.println("three");
-
 			stmt.setInt(1, id);
-			System.out.println("four");
 			stmt.executeUpdate();
-			System.out.println("five");
 			conn.commit();
-			System.out.println("six");
+
 		} catch (SQLException e) {
 			try {
 				conn.rollback();

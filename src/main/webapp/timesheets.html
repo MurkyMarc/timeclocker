@@ -1,47 +1,93 @@
 <!DOCTYPE html>
 <html>
-<head>
-<link rel="stylesheet" type="text/css" href="../main.css">
-<meta charset="ISO-8859-1">
-<title>Timeclocker</title>
-</head>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../main.css">
+		<meta charset="ISO-8859-1">
+		<title>Timeclocker</title>
+	</head>
 
-<body>
-<!-- Header Section -->
-	<div class="header">
-		<div class="logo">
-			<a href="/timeclocker/api/home"><img
-				src="https://skillstorm.com/wp-content/uploads/2014/11/Skillstorm.jpg"
-				alt="" /></a>
-		</div>
-		<div class="buttons">
-			<div class="button">
-				<a href="/">Log Out</a>
+	<body>
+	<!-- Header Section -->
+		<div class="header">
+			<div class="logo">
+				<a href="/timeclocker/api/home"><img
+					src="https://skillstorm.com/wp-content/uploads/2014/11/Skillstorm.jpg"
+					alt="" /></a>
 			</div>
-			<div class="button">
-				<a href="/">Submit</a>
+			<div class="buttons">
+				<div class="button">
+					<a href="/timeclocker/api/logout">Log Out</a>
+				</div>
+				<!-- <div class="button">
+					<a href="/">Submit</a>
+				</div> -->
 			</div>
 		</div>
-	</div>
-<!-- End of header -->
+	<!-- End of header -->
 
-	<div class="data-box">
-		<table id="list">
-            <tr>
-                <th>ID</th>
-                <th>Monday</th>
-                <th>Tuesday</th>
-                <th>Wednesday</th>
-                <th>Thursday</th>
-                <th>Friday</th>
-                <th>Saturday</th>
-                <th>Sunday</th>
-                <th>Total Hours</th>
-                <th>Week End Date</th>
-            </tr>
-        </table>
-	</div>
+		<div class="data-box">
+		<div class="TimesheetsTitle">Save a new Timesheet:</div><br />
+		<form id="add">
+			<table id="new-timesheet">
+				<tr>
+					<th>Monday</th>
+					<th>Tuesday</th>
+					<th>Wednesday</th>
+					<th>Thursday</th>
+					<th>Friday</th>
+					<th>Saturday</th>
+					<th>Sunday</th>
+					<th>Week End Date</th>
+					<!-- <th>Total Hours</th> -->
+				</tr>
+				<tr>
+					<!-- <td>#</td> -->
+					<td><input type="number" step="0.1" name="monday" id="monday" value="0" required/></td>
+					<td><input type="number" step="0.1" name="tuesday" id="tuesday" value="0" required/></td>
+					<td><input type="number" step="0.1" name="wednesday" id="wednesday" value="0" required/></td>
+					<td><input type="number" step="0.1" name="thursday" id="thursday" value="0" required/></td>
+					<td><input type="number" step="0.1" name="friday" id="friday" value="0" required/></td>
+					<td><input type="number" step="0.1" name="saturday" id="saturday" value="0" required/></td>
+					<td><input type="number" step="0.1" name="sunday" id="sunday" value="0" required/></td>
+					<td><input type="date" name="week" id="week" value="2019-12-02" required/></td>
+					<!-- <td>40</td> -->
+					<td><input type="submit" name="timesheet" value="Save" /></td>
+				</tr>
+			</table>
+		</form>
+<br /><br /><br />
+				<!--<input type="text" name="artist" id="artist" /><br />-->
+				
+			
 
-</body>
+			<!--<table id="list">
+				<tr>
+					<th>Artist Id</th>
+					<th>Name</th>
+				</tr>
+			</table>-->
+			<div class="TimesheetsTitle">Your Timesheets:</div><br />
+			<table id="list">
+				<tr>
+					<th>ID</th>
+					<th>Monday</th>
+					<th>Tuesday</th>
+					<th>Wednesday</th>
+					<th>Thursday</th>
+					<th>Friday</th>
+					<th>Saturday</th>
+					<th>Sunday</th>
+					<th>Week End Date</th>
+					<th>Total Hours</th>
+					<th>Status</th>
+					<th>Edit</th>
+				</tr>
+			</table>
+		</div>
 
+	</body>
+	<footer>
+		<script src="../main.js"></script>
+		<script src="https://unpkg.com/axios@0.19.0/dist/axios.min.js"></script>
+	</footer>
 </html>

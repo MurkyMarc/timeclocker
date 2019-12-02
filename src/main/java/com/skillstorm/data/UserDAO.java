@@ -39,8 +39,9 @@ public class UserDAO {
 			user.setTitle(results.getString(6));
 			user.setRoleId(results.getInt(7));
 
-			conn.close();
+//			conn.close();
 		}
+		conn.close();
 		return user;
 	}
 }
